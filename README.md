@@ -4,7 +4,7 @@ Turn movies into music. Choose a movie, and get 7 song suggestions based on that
 
 # Movies2Music
 
-Movies2Music is made in pure HTML, CSS and Javascript. It uses both Spotify's API as well as TMDB's (The Movie DataBase) API. The site takes in a movie as an input and lists out 7 songs that matches the movie's official soundtrack's cadence, valence, emotion and other variables. The app uses TMBD's database to search for a movie by name and shows different movies matching the given name. Then, Spotify is used to search for that movie's soundtrack, and find recommended tracks based on the sound track.
+Movies2Music is made in pure HTML, CSS and Javascript. It uses both Spotify's API as well as TMDB's (The Movie DataBase) API. The site takes in a movie as an input and lists out 7 songs that matches the movie's official soundtrack's cadence, valence, emotion and other variables. The app uses TMBD's database to search for a movie by name and shows different movies matching the given name. Then, Spotify is used to search for that movie's soundtrack, and find recommended tracks based on the sound track. This project was for me to familiarize myself with basic and more advanced web proggraming principles, Namely: API use, basic API search fetching and display, JSON use and general software building and engineering.
 
 ## Features
 
@@ -60,3 +60,6 @@ The app will be available at `http://localhost:5000`.
 
 - [Spotify API](https://developer.spotify.com/documentation/web-api)
 - [IMDB API](https://developer.imdb.com/non-commercial-datasets/)
+
+## Note
+To run the following code, You will have to maunally change the Spotify Client Secret. The current Spotify Secret in the code has been rotated out.
