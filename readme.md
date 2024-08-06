@@ -1,5 +1,9 @@
 # Movies2Music
 
+Turn movies into music. Choose a movie, and get 7 song suggestions based on that movie matching the movie's emotions, energy and vibe.
+
+# Movies2Music
+
 Movies2Music is made in pure HTML, CSS and Javascript. It uses both Spotify's API as well as TMDB's (The Movie DataBase) API. The site takes in a movie as an input and lists out 7 songs that matches the movie's official soundtrack's cadence, valence, emotion and other variables. The app uses TMBD's database to search for a movie by name and shows different movies matching the given name. Then, Spotify is used to search for that movie's soundtrack, and find recommended tracks based on the sound track.
 
 ## Features
@@ -33,7 +37,7 @@ cd movie-soundtrack-playlist-generator
 2. Install the necessary Dependencies
 
 ```
-npm install 
+npm install express axios body-parser node-fetch
 ```
 
 3. Launch the app on node using the terminal
