@@ -50,7 +50,7 @@ The app will be available at `http://localhost:5000`.
 
 ## Usage
 
-1. Open yuor browser to `http://localhost:5000/`
+1. Open your browser to `http://localhost:5000/`
 2. Click on the Start button
 3. Enter the Name of your chosen movie in the seach bar and click submit
 4. Choose your movie from the list of suggestions
@@ -62,4 +62,4 @@ The app will be available at `http://localhost:5000`.
 - [IMDB API](https://developer.imdb.com/non-commercial-datasets/)
 
 ## Note
-To run the following code, You will have to maunally change the Spotify Client Secret. The current Spotify Secret in the code has been rotated out.
+To run the following code, you will have to maunally change the Spotify Client Secret. The current Spotify Secret in the code has been rotated out.
