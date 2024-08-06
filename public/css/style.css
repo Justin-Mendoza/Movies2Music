@@ -1,0 +1,143 @@
+* {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+  margin: 0;
+}
+.container1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #efeaff;
+  margin: 0px;
+  padding: 0px;
+  color: #1b006a;
+}
+
+.button {
+  font-size: 24px;
+  max-width: 170px;
+  border-radius: 10px;
+  font-size: x-large;
+  background-color: black;
+  color: green;
+  display: flex;
+  height: 70px;
+  width: 150px;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: #e7eaf6;
+}
+.container2 {
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+  padding: 10px;
+  border: 10px;
+  background-color: #1b006a;
+  color: #ececec;
+  height: 100%;
+}
+
+.moviesContainer {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: center;
+  width: 66%;
+  height: 90%;
+  background-color: cornsilk;
+  border-radius: 40px;
+  margin: 20px auto;
+}
+
+#resultsContainer {
+  width: 90%;
+  color: #1b006a;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto; /* Add margin auto to center horizontally */
+}
+
+/* #resultsContainer
+  :hover
+  > *:not(.movie):not(.movie img):not(.movie h2):not(.movie p) {
+  background-color: #a283fc;
+  border: 5px solid #ccc;
+} */
+/* 
+.movie :hover {
+  border: 4px solid #ccc;
+  background-color: #a283fc;
+} */
+.movie {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  overflow: scroll;
+  background-color: #1b006a;
+}
+
+.movie img {
+  width: 100px;
+  height: auto;
+  float: left;
+  margin-right: 10px;
+}
+.movie h2 {
+  margin-top: 0;
+}
+
+.movieLayout {
+  width: 100%;
+  background-color: #1b006a;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+
+body {
+  font-family: Arial;
+  color: white;
+}
+
+.split {
+  width: 45%;
+  position: fixed;
+  /* z-index: 1; */
+  /* top: 0; */
+  /* overflow-x: hidden; */
+  padding-top: 800px;
+  /* margin-top: 70px;™ */
+}
+
+.left {
+  left: 5%;
+  background-color: #1b006a;
+  overflow-x: hidden;
+}
+
+.right {
+  right: 5%;
+  background-color: #efeaff;
+}
+
+.centered {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+}

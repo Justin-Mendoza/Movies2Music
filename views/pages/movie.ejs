@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>movie</title>
+  </head>
+  <!-- BODY START!!! -->
+  <body>
+    <container class="container1">
+      <h1 class="header">Movies2Music</h1>
+    </container>
+
+    <container>
+      <div class="split left">
+        <div class="centered">
+          <div class="movieLayout">
+            <% if (movieJSON.poster_path) { %>
+            <img
+              src="https://image.tmdb.org/t/p/w200/<%= movieJSON.poster_path %>"
+              alt="Poster for <%= movieJSON.title %>"
+              style="display: inline-block; object-fit: cover; width: 20%"
+            />
+            <% }else { %>
+            <img
+              src="https://via.placeholder.com/200x300?text=No+Poster"
+              alt="No Poster Available"
+              style="display: inline-block; object-fit: cover; width: 20%"
+            />
+            <% } %>
+
+            <div>
+              <h3>Title: <%=movieJSON.title%></h3>
+              <h5><%=movieJSON.release_date%></h5>
+            </div>
+          </div>
+          <div>
+            <h6 id="overview"><%=movieJSON.overview%></h6>
+          </div>
+
+          <!-- <div class="split right"></div> -->
+          <!--  -->
+          <!-- <h2>Jane Flex</h2>
+          <p>Some text.</p> -->
+        </div>
+      </div>
+
+      <div class="split right">
+        <div class="centered">
+          <h2 style="color: #1b006a"><%=jsonData.albums.items[0].name%></h2>
+          <div
+            style="
+              width: 90%;
+              max-height: 80%;
+              overflow-y: auto;
+              margin: 20% auto;
+              border: 1px solid white;
+              background-color: black;
+              margin-top: 0;
+            "
+          >
+            <table
+              style="
+                width: 100%;
+                color: whitesmoke;
+                font-size: small;
+                border: 1px solid;
+                border-color: white;
+                background-color: #1b006a;
+                overflow-y: auto;
+              "
+            >
+              <tr>
+                <td></td>
+                <td><%=movieJSON.title%></td>
+              </tr>
+              <% recommendedPlaylist.tracks.forEach((movie, index) => { %>
+              <tr style="border: 1px solid; border-color: white">
+                <td style="border: 1px solid; border-color: white">
+                  <%=index + 1%>
+                </td>
+                <td style="border: 1px solid; border-color: white">
+                  <%=recommendedPlaylist.tracks[index].name%>
+                  <p><%=recommendedPlaylist.tracks[index].artists[0].name%></p>
+                </td>
+              </tr>
+              <% }) %>
+            </table>
+          </div>
+        </div>
+      </div>
+    </container>
+    <script>
+      // Cache the div so that the browser doesn't have to find it every time the window is resized.
+              var $div = $('#overview');
+
+              // Run the following when the window is resized, and also trigger it once to begin with.
+              $(window).resize(function () {
+                 // Get the current height of the div and save it as a variable.
+                 var height = $div.height();
+                 // Set the font-size and line-height of the text within the div according to the current height.
+                 $div.css({
+                    'font-size': (height/2) + 'px',
+                    'line-height': height + 'px'
+                 })
+              }).trigger('resize');​
+    </script>
+  </body>
+</html>

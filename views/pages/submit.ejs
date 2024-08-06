@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" type="text/css" />
+    <title>submit</title>
+  </head>
+  <body>
+    <container class="container1">
+      <h1 class="header">Choose the movie from the search results</h1>
+    </container>
+    <container class="container2">
+      <h3 style="align-self: center">
+        Step 2: Here are the search results of your search, is the movie you're
+        looking for in here?
+      </h3>
+
+      <container class="moviesContainer">
+        <h1
+          style="
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+            color: black;
+          "
+        >
+          Search Results for <%= movieName %>
+        </h1>
+        <container id="resultsContainer">
+          <% if (results.length > 0) {%> <% results.forEach((movie,index)=> { %>
+          <div id="movie_<%=index%>" title="<%=movie.id%>">
+            <% if (movie.poster_path) { %>
+            <img
+              src="https://image.tmdb.org/t/p/w200/<%= movie.poster_path %>"
+              alt="Poster for <%= movie.title %>"
+            />
+            <% }else { %>
+            <img
+              src="https://via.placeholder.com/200x300?text=No+Poster"
+              alt="No Poster Available"
+            />
+            <% } %>
+
+            <h2><%=movie.title%></h2>
+            <!-- <h5>movie.genre</h5> -->
+            <p><%=movie.overview%></p>
+          </div>
+          <%})%> <% } else {%>
+          <p>No movies have been found</p>
+          <% } %>
+        </container>
+      </container>
+    </container>
+    <h1 class="header">Cant find your movie? go back to search!</h1>
+    <a href="/search"> &#128269; Search </a>
+    <script>
+      if (typeof browser === "undefined") {
+        var browser = chrome;
+      }
+      document.getElementById("movie_0").addEventListener("click", function () {
+        movieId = document.getElementById("movie_0").title;
+
+        sendFormToMovie(movieId);
+      });
+      document.getElementById("movie_1").addEventListener("click", function () {
+        movieId = document.getElementById("movie_1").title;
+        sendFormToMovie(movieId);
+      });
+      document.getElementById("movie_2").addEventListener("click", function () {
+        movieId = document.getElementById("movie_2").title;
+        sendFormToMovie(movieId);
+      });
+      document.getElementById("movie_3").addEventListener("click", function () {
+        movieId = document.getElementById("movie_3").title;
+        sendFormToMovie(movieId);
+      });
+      document.getElementById("movie_4").addEventListener("click", function () {
+        movieId = document.getElementById("movie_4").title;
+        sendFormToMovie(movieId);
+      });
+
+      //function
+      function sendFormToMovie(movieId) {
+        const form = document.createElement("form");
+        form.method = "POST";
+        form.action = "/movie";
+
+        //PASSED VALEUS
+        const passedVariables = document.createElement("input"); // creating a new name-value pair to pass
+        passedVariables.type = "hidden";
+        passedVariables.name = "movieId";
+        passedVariables.value = movieId;
+
+        form.appendChild(passedVariables);
+        document.body.appendChild(form);
+        form.submit();
+      }
+    </script>
+  </body>
+</html>
